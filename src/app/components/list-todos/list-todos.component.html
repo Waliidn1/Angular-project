@@ -1,0 +1,9 @@
+<h2>List todos</h2>
+<ul>
+        <div *ngFor="let todo of listTodos">
+            <article *ngIf="!todo.completed; else elseBlock" >{{todo?.title}}, {{todo?.completed}}</article>
+            <ng-template #elseBlock>
+               <article><s>{{todo?.title}}, {{todo?.completed}}</s></article>
+            </ng-template>
+        </div>
+</ul>
